@@ -34,7 +34,7 @@ class StudioTableMouseListener extends MouseAdapter {
 		this.jt = jt;
 	}
 
-	// ¼àÌıµ½ĞĞºÅ£¬½«ËùÑ¡ĞĞµÄÄÚÈİÒÀ´Î¸³µ½ hall ¾²Ì¬¶ÔÏó£¬ÒÔ±ã´«ÓĞÖµ¶ÔÏóµ½ĞŞ¸ÄÃæ°å½øĞĞĞŞ¸Ä
+	// ç›‘å¬åˆ°è¡Œå·ï¼Œå°†æ‰€é€‰è¡Œçš„å†…å®¹ä¾æ¬¡èµ‹åˆ° hall é™æ€å¯¹è±¡ï¼Œä»¥ä¾¿ä¼ æœ‰å€¼å¯¹è±¡åˆ°ä¿®æ”¹é¢æ¿è¿›è¡Œä¿®æ”¹
 	public void mouseClicked(MouseEvent event) {
 		int row = jt.getSelectedRow();
 		hall.setID(Integer.parseInt(jt.getValueAt(row, 0).toString()));
@@ -58,9 +58,9 @@ class StudioTable {
 		this.hall = hall;
 	}
 
-	// ´´½¨JTable
+	// åˆ›å»ºJTable
 	public void createTable(JScrollPane jp, Object[] columnNames,
-			List<Studio> stuList) {
+							List<Studio> stuList) {
 		try {
 
 			Object data[][] = new Object[stuList.size()][columnNames.length];
@@ -74,20 +74,20 @@ class StudioTable {
 				data[i][1] = stu.getName();
 				data[i][2] = Integer.toString(stu.getRowCount());
 				data[i][3] = Integer.toString(stu.getColCount());
-				data[i][4] = stu.getIntroduction();				
+				data[i][4] = stu.getIntroduction();
 				i++;
 			}
 
-			// Éú³ÉJTable
+			// ç”ŸæˆJTable
 			jt = new JTable(data, columnNames);
 			jt.setBounds(0, 0, 700, 450);
 
-			// Ìí¼ÓÊó±ê¼àÌı£¬¼àÌıµ½ËùÑ¡ĞĞ
+			// æ·»åŠ é¼ æ ‡ç›‘å¬ï¼Œç›‘å¬åˆ°æ‰€é€‰è¡Œ
 			StudioTableMouseListener tml = new StudioTableMouseListener(jt,
 					columnNames, hall);
 			jt.addMouseListener(tml);
 
-			// ÉèÖÃ¿Éµ÷ÕûÁĞ¿í
+			// è®¾ç½®å¯è°ƒæ•´åˆ—å®½
 			jt.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
 			jp.add(jt);
@@ -102,31 +102,31 @@ class StudioTable {
 public class StudioMgrUI extends JFrame implements ActionListener {
 	static Studio hall;
 
-	// ½çÃæÌáÊ¾
+	// ç•Œé¢æç¤º
 	private JLabel ca1 = null;
 
-	// ÓÃÀ´·Å±í¸ñµÄ¹ö¶¯¿Ø¼ş
+	// ç”¨æ¥æ”¾è¡¨æ ¼çš„æ»šåŠ¨æ§ä»¶
 	private JScrollPane jsc;
 
-	// ²éÕÒµÄÌáÊ¾ºÍÊä³ö
+	// æŸ¥æ‰¾çš„æç¤ºå’Œè¾“å‡º
 	private JLabel hint;
 	private JTextField input;
 
-	// ²éÕÒ£¬±à¼­ºÍÉ¾³ı°´Å¥
+	// æŸ¥æ‰¾ï¼Œç¼–è¾‘å’Œåˆ é™¤æŒ‰é’®
 
 	private JButton btnAdd, btnEdit, btnDel, btnQuery;
 
 	public StudioMgrUI(Studio hall) {
 		this.hall = hall;
 
-		ca1 = new JLabel("Ñİ³öÌü¹ÜÀí");
+		ca1 = new JLabel("æ¼”å‡ºå…ç®¡ç†");
 		ca1.setBounds(280, 6, 480, 26);
 
 		jsc = new JScrollPane();
 		jsc.setBounds(50, 40, 700, 450);
 		this.add(jsc);
 
-		hint = new JLabel("ÇëÊäÈëÑİ³öÌüÃû³Æ:");
+		hint = new JLabel("è¯·è¾“å…¥æ¼”å‡ºå…åç§°:");
 		hint.setBounds(60, 500, 150, 30);
 		this.add(hint);
 
@@ -134,23 +134,23 @@ public class StudioMgrUI extends JFrame implements ActionListener {
 		input.setBounds(300, 500, 120, 30);
 		this.add(input);
 
-		// ²éÕÒ £¬É¾³ıºÍ±à¼­µÄ°´Å¥£¬ÆäÖĞº¬ÓĞÏà¹ØµÄÊÂ¼ş´¦Àí£¡
-		btnQuery = new JButton("²éÕÒ");
+		// æŸ¥æ‰¾ ï¼Œåˆ é™¤å’Œç¼–è¾‘çš„æŒ‰é’®ï¼Œå…¶ä¸­å«æœ‰ç›¸å…³çš„äº‹ä»¶å¤„ç†ï¼
+		btnQuery = new JButton("æŸ¥æ‰¾");
 		btnQuery.addActionListener(this);
 		btnQuery.setBounds(440, 500, 60, 30);
 		this.add(btnQuery);
 
-		btnAdd = new JButton("Ìí¼Ó");
+		btnAdd = new JButton("æ·»åŠ ");
 		btnAdd.addActionListener(this);
 		btnAdd.setBounds(520, 500, 60, 30);
 		this.add(btnAdd);
-		
-		btnEdit = new JButton("±à¼­");
+
+		btnEdit = new JButton("ç¼–è¾‘");
 		btnEdit.addActionListener(this);
 		btnEdit.setBounds(600, 500, 60, 30);
 		this.add(btnEdit);
-		
-		btnDel = new JButton("É¾³ı");
+
+		btnDel = new JButton("åˆ é™¤");
 		btnDel.addActionListener(this);
 		btnDel.setBounds(680, 500, 60, 30);
 		this.add(btnDel);
@@ -175,33 +175,33 @@ public class StudioMgrUI extends JFrame implements ActionListener {
 				// tms.createTable(jsc, in, sql);
 
 			} else {
-				JOptionPane.showMessageDialog(null, "Î´ÊäÈëÈÎºÎÄÚÈİ");
+				JOptionPane.showMessageDialog(null, "æœªè¾“å…¥ä»»ä½•å†…å®¹");
 			}
 		} else if (e.getSource() == btnAdd) {
-			 StudioEditUI a = new StudioEditUI(this,false,null);
-			 a.toFront();
-			 a.setModal(true);
-			 a.setVisible(true);
-			 if(a.getReturnStatus()){
-				 showTable();
-			 }
-			 
+			StudioEditUI a = new StudioEditUI(this,false,null);
+			a.toFront();
+			a.setModal(true);
+			a.setVisible(true);
+			if(a.getReturnStatus()){
+				showTable();
+			}
+
 		} else if (e.getSource() == btnEdit) {
 			StudioEditUI a = new StudioEditUI(this,true,hall);
-			 a.toFront();
-			 a.setModal(true);
-			 a.setVisible(true);
-			 if(a.getReturnStatus()){
-				 showTable();
-			 }			 
-			 
+			a.toFront();
+			a.setModal(true);
+			a.setVisible(true);
+			if(a.getReturnStatus()){
+				showTable();
+			}
+
 		} else if (e.getSource() == btnDel) {
-			int confirm = JOptionPane.showConfirmDialog(null, "È·ÈÏÉ¾³ıËùÑ¡£¿", "É¾³ı",
+			int confirm = JOptionPane.showConfirmDialog(null, "ç¡®è®¤åˆ é™¤æ‰€é€‰ï¼Ÿ", "åˆ é™¤",
 					JOptionPane.YES_NO_OPTION);
 			if (confirm == JOptionPane.YES_OPTION) {
-				 StudioSrv stuSrv = new StudioSrv();
-				 stuSrv.delete(hall.getID());			
-				 showTable();
+				StudioSrv stuSrv = new StudioSrv();
+				stuSrv.delete(hall.getID());
+				showTable();
 			}
 		}
 	}

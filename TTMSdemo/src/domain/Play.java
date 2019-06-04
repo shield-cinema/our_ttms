@@ -12,28 +12,28 @@ public class Play {
 	   play_image           longblob,
 	   play_length          int,
 	   play_ticket_price    numeric(10,2),
-	   play_status          smallint comment 'È¡Öµº¬Òå£º
-	            0£º´ı°²ÅÅÑİ³ö
-	            1£ºÒÑ°²ÅÅÑİ³ö
-	            -1£ºÏÂÏß',
+	   play_status          smallint comment 'å–å€¼å«ä¹‰ï¼š
+	            0ï¼šå¾…å®‰æ’æ¼”å‡º
+	            1ï¼šå·²å®‰æ’æ¼”å‡º
+	            -1ï¼šä¸‹çº¿',
 	   primary key (play_id)
 	);*/
-	
+
 	private int id;
 	private int typeId;
 	private int langId;
 	private String name;
 	private String introduction;
-	
-	private int[] image; // ?? ²é¿´Ò»ÏÂlongblob¶ÔÓ¦javaµÄÀàĞÍ
+
+	private int[] image; // ?? æŸ¥çœ‹ä¸€ä¸‹longblobå¯¹åº”javaçš„ç±»å‹
 	private int length;
 	private float ticketPrice;
-	
-	
-	
+
+
+
 	public Play(int id, int typeId, int langId, String name,
-			String introduction, int[] image, int length, float ticketPrice,
-			int status) {
+				String introduction, int[] image, int length, float ticketPrice,
+				int status) {
 		super();
 		this.id = id;
 		this.typeId = typeId;
@@ -45,8 +45,8 @@ public class Play {
 		this.ticketPrice = ticketPrice;
 		this.status = status;
 	}
-	
-	
+
+
 	public int getId() {
 		return id;
 	}
@@ -102,6 +102,6 @@ public class Play {
 		this.status = status;
 	}
 	private int status;
-	
-	
+
+
 }

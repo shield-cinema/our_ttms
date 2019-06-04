@@ -4,14 +4,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import util.DBUtil;
 import domain.Studio;
 import idao.IStudioDAO;
-import util.DBUtil;
 
 public class StudioDAO implements IStudioDAO {
 	@Override
-	public int insert(Studio stu)//°ÑÓ°ÌüĞÅÏ¢×ª³Éstring,Á¬½ÓÊı¾İ¿â£¬´«Èë£¬²åÈëÊı¾İ¿âÖµ
+	public int insert(Studio stu)//æŠŠå½±å…ä¿¡æ¯è½¬æˆstring,è¿æ¥æ•°æ®åº“ï¼Œä¼ å…¥ï¼Œæ’å…¥æ•°æ®åº“å€¼
 	{
 		try {
 			String sql = "insert into studio(studio_name, studio_row_count, studio_col_count, studio_introduction )"
@@ -19,24 +18,24 @@ public class StudioDAO implements IStudioDAO {
 					+ stu.getName()
 					+ "', "
 					+ stu.getRowCount()
-					+ ", " + stu.getColCount() 
+					+ ", " + stu.getColCount()
 					+ ", '" + stu.getIntroduction()
 					+ "' )";
-			DBUtil db = new DBUtil(); //Êı¾İ¿âÁ¬½Ó£¬¿ÉÒÔÖ±½ÓÓÃ
+			DBUtil db = new DBUtil(); //æ•°æ®åº“è¿æ¥ï¼Œå¯ä»¥ç›´æ¥ç”¨
 			ResultSet rst = db.getInsertObjectIDs(sql);
 			if (rst!=null && rst.first()) {
-				stu.setID(rst.getInt(1));//Èç¹û²åÈë³É¹¦£¬¾Í·µ»ØÊı¾İ¿âÀïĞÂÓ°ÌüµÄ±àºÅ
+				stu.setID(rst.getInt(1));//å¦‚æœæ’å…¥æˆåŠŸï¼Œå°±è¿”å›æ•°æ®åº“é‡Œæ–°å½±å…çš„ç¼–å·
 				return 1;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return 0;
 	}
 
 	@Override
-	public int update(Studio stu)  //¸üĞÂ
+	public int update(Studio stu)  //æ›´æ–°
 	{
 
 		String sql = "update studio set " + " studio_name ='" + stu.getName()
@@ -48,12 +47,12 @@ public class StudioDAO implements IStudioDAO {
 
 		DBUtil db = new DBUtil();
 
-		return db.execCommand(sql);  //Ö±½ÓÖ´ĞĞ
+		return db.execCommand(sql);  //ç›´æ¥æ‰§è¡Œ
 
 	}
 
 	@Override
-	public int delete(int ID)  //¸ù¾İIDÉ¾³ı
+	public int delete(int ID)  //æ ¹æ®IDåˆ é™¤
 	{
 		String sql = "delete from  studio ";
 		sql += " where studio_id = " + ID;
@@ -64,17 +63,17 @@ public class StudioDAO implements IStudioDAO {
 	@Override
 	public List<Studio> select(String condt)
 	{
-		List<Studio> stuList = null;//¶¨Òå½á¹û¼¯
+		List<Studio> stuList = null;//å®šä¹‰ç»“æœé›†
 		stuList=new LinkedList<Studio>();
 		try {
-			String sql = "select studio_id, studio_name, studio_row_count, studio_col_count, studio_introduction from studio ";//²éÑ¯Óï¾ä
-			condt.trim();//È¥³ıÇ°ºó¿Õ¸ñ£¬¿ÉÒÔÖ±½ÓÓÃ
-			if(!condt.isEmpty())  //Èç¹û²»ÊÇ¿Õ
-				sql+= " where " + condt;//¼ÓÉÏwhereÓï¾ä
+			String sql = "select studio_id, studio_name, studio_row_count, studio_col_count, studio_introduction from studio ";//æŸ¥è¯¢è¯­å¥
+			condt.trim();//å»é™¤å‰åç©ºæ ¼ï¼Œå¯ä»¥ç›´æ¥ç”¨
+			if(!condt.isEmpty())  //å¦‚æœä¸æ˜¯ç©º
+				sql+= " where " + condt;//åŠ ä¸Šwhereè¯­å¥
 			DBUtil db = new DBUtil();
-			ResultSet rst = db.execQuery(sql);  //²éÑ¯²¢µÃµ½½á¹û¼¯
+			ResultSet rst = db.execQuery(sql);  //æŸ¥è¯¢å¹¶å¾—åˆ°ç»“æœé›†
 			//System.out.print("sql:"+sql);
-			if (rst!=null)   //ÕÒµ½µÄ½á¹û¼¯ÖØĞÂ´«µ½¶¨ÒåµÄ½á¹û¼¯ÀïÈ¥
+			if (rst!=null)   //æ‰¾åˆ°çš„ç»“æœé›†é‡æ–°ä¼ åˆ°å®šä¹‰çš„ç»“æœé›†é‡Œå»
 			{
 				while(rst.next())
 				{
@@ -90,7 +89,7 @@ public class StudioDAO implements IStudioDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return stuList;
 	}
 }

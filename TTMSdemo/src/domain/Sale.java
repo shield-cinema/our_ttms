@@ -11,25 +11,25 @@ public class Sale {
 	   sale_time            datetime,
 	   sale_payment         decimal(10,2),
 	   sale_change          numeric(10,2),
-	   sale_type            smallint comment 'Àà±ğÈ¡Öµº¬Òå£º
-	            1£ºÏúÊÛµ¥
-	            -1£ºÍË¿îµ¥',
-	   sale_status          smallint comment 'ÏúÊÛµ¥×´Ì¬ÈçÏÂ£º
-	            0£º´ú¸¶¿î
-	            1£ºÒÑ¸¶¿î',
+	   sale_type            smallint comment 'ç±»åˆ«å–å€¼å«ä¹‰ï¼š
+	            1ï¼šé”€å”®å•
+	            -1ï¼šé€€æ¬¾å•',
+	   sale_status          smallint comment 'é”€å”®å•çŠ¶æ€å¦‚ä¸‹ï¼š
+	            0ï¼šä»£ä»˜æ¬¾
+	            1ï¼šå·²ä»˜æ¬¾',
 	   primary key (sale_ID)
-	); 
+	);
 	==============================================================*/
-	
+
 	private int id;
 	private int empId;
-	private Date time ;  // ?? ²é¿´datetime¶ÔÓ¦µÄjavaÀàĞÍ
+	private Date time ;  // ?? æŸ¥çœ‹datetimeå¯¹åº”çš„javaç±»å‹
 	private float payment;
-	private float change;  //  Õâ¸öÊôĞÔµÄ×÷Òµ¸øÄãÊÇÊ²Ã´ÄØ£¿
+	private float change;  //  è¿™ä¸ªå±æ€§çš„ä½œä¸šç»™ä½ æ˜¯ä»€ä¹ˆå‘¢ï¼Ÿ
 	private int type;
 	private int status;
-	
-	
+
+
 	public int getId() {
 		return id;
 	}

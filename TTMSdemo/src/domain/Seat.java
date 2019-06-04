@@ -12,13 +12,13 @@ public class Seat {
 	   primary key (seat_id)
 	);
 	*/
-	
+
 	private int id;
 	private int studioId;
 	private int row;
 	private int column;
-	
-	
+
+
 	public Seat(int id, int studioId, int row, int column) {
 		super();
 		this.id = id;
@@ -26,8 +26,8 @@ public class Seat {
 		this.row = row;
 		this.column = column;
 	}
-	
-	
+
+
 	public int getId() {
 		return id;
 	}

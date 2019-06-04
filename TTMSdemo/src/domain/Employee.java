@@ -1,10 +1,10 @@
-﻿package domain;
+package domain;
 
 import java.io.Serializable;
 
 public class Employee implements Serializable {
-	
-	
+
+
 	/*
 	 * create table employee
     (
@@ -16,117 +16,117 @@ public class Employee implements Serializable {
         emp_email            varchar(100),
          primary key (emp_id)
       );
-	 * 
-	 * 
+	 *
+	 *
 	 */
-	
-	private int id;
-	private String no;
-	private String name;
-	private String telNum;
-	private String address;
-	private String email;
-	
-	
-	
 
-	public Employee(int id, String no, String name, String telNum,
-			String address, String email) {
-		super();
-		this.id = id;
-		this.no = no;
-		this.name = name;
-		this.telNum = telNum;
-		this.address = address;
-		this.email = email;
-	}
+    private int id;
+    private String no;
+    private String name;
+    private String telNum;
+    private String address;
+    private String email;
 
 
 
 
-	public int getId() {
-		return id;
-	}
+    public Employee(int id, String no, String name, String telNum,
+                    String address, String email) {
+        super();
+        this.id = id;
+        this.no = no;
+        this.name = name;
+        this.telNum = telNum;
+        this.address = address;
+        this.email = email;
+    }
 
 
 
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public int getId() {
+        return id;
+    }
 
 
 
 
-	public String getNo() {
-		return no;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
 
 
 
-	public void setNo(String no) {
-		this.no = no;
-	}
+    public String getNo() {
+        return no;
+    }
 
 
 
 
-	public String getName() {
-		return name;
-	}
+    public void setNo(String no) {
+        this.no = no;
+    }
 
 
 
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
 
 
 
-	public String getTelNum() {
-		return telNum;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
 
 
 
-	public void setTelNum(String telNum) {
-		this.telNum = telNum;
-	}
-
-
-
-	public String getAddress() {
-		return address;
-	}
-
-
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public String getTelNum() {
+        return telNum;
+    }
 
 
 
 
-	public String getEmail() {
-		return email;
-	}
+    public void setTelNum(String telNum) {
+        this.telNum = telNum;
+    }
+
+
+
+    public String getAddress() {
+        return address;
+    }
+
+
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
 
 
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
 
 
-	public void showValue() {
-		System.out.println("编号：" + id + "\t姓名：" + name);
-	}
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+
+    public void showValue() {
+        System.out.println("编号：" + id + "\t姓名：" + name);
+    }
 
 }

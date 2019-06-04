@@ -25,54 +25,54 @@ public class StudioEditUI extends JDialog implements ActionListener {
 	private Studio stu;
 
 	private int select;
-	private boolean opMod; // ²Ù×÷Ä£Ê½, falseÎªĞÂÔö; trueÎªĞŞ¸Ä
-	
-	private boolean rst=false; //²Ù×÷½á¹û
+	private boolean opMod; // æ“ä½œæ¨¡å¼, falseä¸ºæ–°å¢; trueä¸ºä¿®æ”¹
 
-	private JFrame jf; //  Õâ¸öframeµÄ×÷ÓÃÊÇÊ²Ã´£¿
-	private JButton cancel, edit; // È¡ÏûºÍĞŞ¸Ä¼ü
+	private boolean rst=false; //æ“ä½œç»“æœ
 
-	// Ìí¼ÓĞèÒªÌí¼ÓµÄÄÚÈİ £¬ ºÍÌí¼ÓÊÇÒ»ÖÂµÄ£¡
+	private JFrame jf; //  è¿™ä¸ªframeçš„ä½œç”¨æ˜¯ä»€ä¹ˆï¼Ÿ
+	private JButton cancel, edit; // å–æ¶ˆå’Œä¿®æ”¹é”®
+
+	// æ·»åŠ éœ€è¦æ·»åŠ çš„å†…å®¹ ï¼Œ å’Œæ·»åŠ æ˜¯ä¸€è‡´çš„ï¼
 	private JLabel lblName, lblRow, lblColumn;
 	private JTextField txtName, txtRow, txtColumn;
 
 	public StudioEditUI(final JFrame jf, boolean mod, Studio stu) {
 
-		this.setTitle("±à¼­Ó°Ìü");
+		this.setTitle("ç¼–è¾‘å½±å…");
 
 		JPanel mainPanel = new JPanel();
 		mainPanel.setBounds(0, 1, 540, 300);
 		mainPanel.setBackground(Color.white);
 		mainPanel.setLayout(null);
 
-		lblName = new JLabel("Ó°ÌüÃû³Æ£º");
+		lblName = new JLabel("å½±å…åç§°ï¼š");
 		lblName.setBounds(60, 30, 80, 30);
 		mainPanel.add(lblName);
 		txtName = new JTextField();
 		txtName.setBounds(150, 30, 120, 30);
 		mainPanel.add(txtName);
 
-		lblRow = new JLabel("ĞĞÊı£º");
+		lblRow = new JLabel("è¡Œæ•°ï¼š");
 		lblRow.setBounds(60, 80, 50, 30);
 		mainPanel.add(lblRow);
 		txtRow = new JTextField();
 		txtRow.setBounds(150, 80, 120, 30);
 		mainPanel.add(txtRow);
 
-		lblColumn = new JLabel("ÁĞÊı£º");
+		lblColumn = new JLabel("åˆ—æ•°ï¼š");
 		lblColumn.setBounds(60, 130, 90, 30);
 		mainPanel.add(lblColumn);
 		txtColumn = new JTextField();
 		txtColumn.setBounds(150, 130, 120, 30);
 		mainPanel.add(txtColumn);
 
-		edit = new JButton("±£´æ");
+		edit = new JButton("ä¿å­˜");
 
 		edit.addActionListener(this);
 		edit.setBounds(60, 220, 60, 30);
 		mainPanel.add(edit);
 
-		cancel = new JButton("È¡Ïû");
+		cancel = new JButton("å–æ¶ˆ");
 		cancel.addActionListener(this);
 		cancel.setBounds(180, 220, 60, 30);
 		mainPanel.add(cancel);
@@ -117,9 +117,9 @@ public class StudioEditUI extends JDialog implements ActionListener {
 		txtRow.setText(Integer.toString(stu.getRowCount()));
 		txtColumn.setText(Integer.toString(stu.getColCount()));
 	}
-	
+
 	public boolean getReturnStatus(){
-		   return rst;
+		return rst;
 	}
 
 	@Override
@@ -147,7 +147,7 @@ public class StudioEditUI extends JDialog implements ActionListener {
 				rst=true;
 				jf.setVisible(true);
 			} else {
-				JOptionPane.showMessageDialog(null, "Êı¾İ²»ÍêÕû");
+				JOptionPane.showMessageDialog(null, "æ•°æ®ä¸å®Œæ•´");
 			}
 		}
 

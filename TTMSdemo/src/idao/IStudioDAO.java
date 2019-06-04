@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package idao;
 import domain.*;
@@ -12,10 +12,10 @@ import domain.Studio;
  * @author Administrator
  *
  */
-public interface IStudioDAO //½Ó¿Ú£¬ËùÓĞ¶¨Òå£¬ÔÚdaoÀïÊµÏÖ
+public interface IStudioDAO //æ¥å£ï¼Œæ‰€æœ‰å®šä¹‰ï¼Œåœ¨daoé‡Œå®ç°
 {
 	public int insert(Studio stu);
 	public int update(Studio stu);
 	public int delete(int ID);
-	public List<Studio> select(String condt); 
+	public List<Studio> select(String condt);
 }

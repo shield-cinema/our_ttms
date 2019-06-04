@@ -13,13 +13,13 @@ public class SaleItem {
 	);
 
 	==============================================================*/
-	
+
 	private int id;
 	private int ticketId;
 	private float saleId;
 	private int price;
-	
-	
+
+
 	public SaleItem(int id, int ticketId, float saleId, int price) {
 		super();
 		this.id = id;
@@ -27,8 +27,8 @@ public class SaleItem {
 		this.saleId = saleId;
 		this.price = price;
 	}
-	
-	
+
+
 	public int getId() {
 		return id;
 	}
@@ -53,8 +53,8 @@ public class SaleItem {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
-	
-	
-	
+
+
+
+
 }

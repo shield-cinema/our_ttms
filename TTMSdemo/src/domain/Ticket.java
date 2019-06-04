@@ -9,22 +9,22 @@ public class Ticket {
 	   seat_id              int,
 	   sched_id             int,
 	   ticket_price         numeric(10,2),
-	   ticket_status        smallint comment 'º¬ÒåÈçÏÂ£º
-	            0£º´ıÏúÊÛ
-	            1£ºËø¶¨
-	            9£ºÂô³ö',
+	   ticket_status        smallint comment 'å«ä¹‰å¦‚ä¸‹ï¼š
+	            0ï¼šå¾…é”€å”®
+	            1ï¼šé”å®š
+	            9ï¼šå–å‡º',
 	   primary key (ticket_id)
 	);
 	
 	==============================================================*/
-	
+
 	private int id;
 	private int seatId;
 	private int scheduleId;
 	private float price;
 	private int status;
-	
-	
+
+
 	public Ticket(int id, int seatId, int scheduleId, float price, int status) {
 		super();
 		this.id = id;
@@ -33,8 +33,8 @@ public class Ticket {
 		this.price = price;
 		this.status = status;
 	}
-	
-	
+
+
 	public int getId() {
 		return id;
 	}
@@ -65,5 +65,5 @@ public class Ticket {
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	
+
 }

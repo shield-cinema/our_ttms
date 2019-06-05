@@ -1,7 +1,11 @@
 package idao;
 import dao.*;
 public class DAOFactory {
-	
+
+	public static IDataDictDAO createDataDictDAO(){
+		return new DataDictDAO();
+	}
+
 	public static IStudioDAO creatStudioDAO(){
 		return new StudioDAO();
 	}

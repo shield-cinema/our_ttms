@@ -19,10 +19,10 @@ public class DataDict {
 	private int index;
 	private String name;	
 	private String value;
-	
-	
-	
-	
+
+	public DataDict() {
+	}
+
 	public DataDict(int id, int superId, int index, String name, String value) {
 		super();
 		this.id = id;

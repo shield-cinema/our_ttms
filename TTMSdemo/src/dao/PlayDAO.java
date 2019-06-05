@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class PlayDAO implements IPlayDAO {
     @Override
-    public int insert(Play pla)//°ÑÓ°ÌüĞÅÏ¢×ª³Éstring,Á¬½ÓÊı¾İ¿â£¬´«Èë£¬²åÈëÊı¾İ¿âÖµ
+    public int insert(Play pla)//æŠŠå½±å…ä¿¡æ¯è½¬æˆstring,è¿æ¥æ•°æ®åº“ï¼Œä¼ å…¥ï¼Œæ’å…¥æ•°æ®åº“å€¼
     {
 
         try {
@@ -27,10 +27,10 @@ public class PlayDAO implements IPlayDAO {
                     + pla.getLength() + ", "
                     + pla.getStatus()
                     + " )";
-            DBUtil db = new DBUtil(); //Êı¾İ¿âÁ¬½Ó£¬¿ÉÒÔÖ±½ÓÓÃ
+            DBUtil db = new DBUtil(); //æ•°æ®åº“è¿æ¥ï¼Œå¯ä»¥ç›´æ¥ç”¨
             ResultSet rst = db.getInsertObjectIDs(sql);
             if (rst!=null && rst.first()) {
-                pla.setId(rst.getInt(1));//Èç¹û²åÈë³É¹¦£¬¾Í·µ»ØÊı¾İ¿âÀïĞÂÓ°ÌüµÄ±àºÅ
+                pla.setId(rst.getInt(1));//å¦‚æœæ’å…¥æˆåŠŸï¼Œå°±è¿”å›æ•°æ®åº“é‡Œæ–°å½±å…çš„ç¼–å·
                 db.closeDB(rst);
                 db.close();
                 return 1;
@@ -44,7 +44,7 @@ public class PlayDAO implements IPlayDAO {
         return 0;
     }
     @Override
-    public int update(Play pla)  //¸üĞÂ
+    public int update(Play pla)  //æ›´æ–°
     {
 
         String sql = "update play set " +
@@ -61,11 +61,11 @@ public class PlayDAO implements IPlayDAO {
 
         DBUtil db = new DBUtil();
 
-        return db.execCommand(sql);  //Ö±½ÓÖ´ĞĞ
+        return db.execCommand(sql);  //ç›´æ¥æ‰§è¡Œ
 
     }
     @Override
-    public int delete(int ID)  //¸ù¾İIDÉ¾³ı
+    public int delete(int ID)  //æ ¹æ®IDåˆ é™¤
     {
         String sql = "delete from  play ";
         sql += " where play_id = " + ID;
@@ -81,23 +81,23 @@ play_introduction    varchar(2000),
 play_image           longblob,
 play_length          int,
 play_ticket_price    numeric(10,2),
-play_status          smallint comment 'È¡Öµº¬Òå£º */
+play_status          smallint comment 'å–å€¼å«ä¹‰ï¼š */
 
     @Override
     public List<Play> select(String condt)
     {
-        List<Play> plaList = null;//¶¨Òå½á¹û¼¯
+        List<Play> plaList = null;//å®šä¹‰ç»“æœé›†
         plaList=new LinkedList<Play>();
 
         try {
-            String sql = "select play_id, play_type_id, play_lang_id, play_name, play_introduction, play_image, play_length, play_ticket_price, play_status from play ";//²éÑ¯Óï¾ä
-            condt.trim();//È¥³ıÇ°ºó¿Õ¸ñ£¬¿ÉÒÔÖ±½ÓÓÃ
-            if(!condt.isEmpty())  //Èç¹û²»ÊÇ¿Õ
-                sql+= " where " + condt;//¼ÓÉÏwhereÓï¾ä
+            String sql = "select play_id, play_type_id, play_lang_id, play_name, play_introduction, play_image, play_length, play_ticket_price, play_status from play ";//æŸ¥è¯¢è¯­å¥
+            condt.trim();//å»é™¤å‰åç©ºæ ¼ï¼Œå¯ä»¥ç›´æ¥ç”¨
+            if(!condt.isEmpty())  //å¦‚æœä¸æ˜¯ç©º
+                sql+= " where " + condt;//åŠ ä¸Šwhereè¯­å¥
             DBUtil db = new DBUtil();
-            ResultSet rst = db.execQuery(sql);  //²éÑ¯²¢µÃµ½½á¹û¼¯
+            ResultSet rst = db.execQuery(sql);  //æŸ¥è¯¢å¹¶å¾—åˆ°ç»“æœé›†
             //System.out.print("sql:"+sql);
-            if (rst!=null)   //ÕÒµ½µÄ½á¹û¼¯ÖØĞÂ´«µ½¶¨ÒåµÄ½á¹û¼¯ÀïÈ¥
+            if (rst!=null)   //æ‰¾åˆ°çš„ç»“æœé›†é‡æ–°ä¼ åˆ°å®šä¹‰çš„ç»“æœé›†é‡Œå»
             {
                 while(rst.next())
                 {

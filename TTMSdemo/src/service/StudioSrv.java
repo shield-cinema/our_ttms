@@ -8,10 +8,7 @@ import idao.*;
 public class StudioSrv {
 	private IStudioDAO stuDAO=DAOFactory.creatStudioDAO();
 	
-	public int add(Studio stu)
-	{
-		return stuDAO.insert(stu); 		
-	}
+	public int add(Studio stu) { return stuDAO.insert(stu); }
 	
 	public int modify(Studio stu){
 		return stuDAO.update(stu); 		

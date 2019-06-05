@@ -19,7 +19,10 @@ public class SaleItem {
 	private float saleId;
 	private int price;
 
+	public SaleItem()
+	{
 
+	}
 	public SaleItem(int id, int ticketId, float saleId, int price) {
 		super();
 		this.id = id;

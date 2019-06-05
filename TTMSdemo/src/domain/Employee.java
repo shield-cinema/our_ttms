@@ -27,7 +27,10 @@ public class Employee implements Serializable {
     private String address;
     private String email;
 
+    public Employee()
+    {
 
+    }
 
 
     public Employee(int id, String no, String name, String telNum,

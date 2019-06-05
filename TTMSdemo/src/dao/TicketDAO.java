@@ -18,22 +18,20 @@ import util.DBUtil;
 
 public class TicketDAO implements ITicketDAO {
     @Override
-    public int insert(Ticket stu)//把票的信息转成string,连接数据库，传入，插入数据库值
+    public int insert(Ticket tic)//把票的信息转成string,连接数据库，传入，插入数据库值
     {
 
         try {
             String sql = "insert into ticket(ticket_seatId, ticket_scheduleId, ticket_price, ticket_status )"
-                    + " values('"
-                    + stu.getSeatId()
-                    + "', "
-                    + stu.getScheduleId()
-                    + ", " + stu.getPrice()
-                    + ", '" + stu.getStatus()
-                    + "' )";
+                    + " values("
+                    + tic.getSeatId() + ", "
+                    + tic.getScheduleId() + ", "
+                    + tic.getPrice() + ", "
+                    + tic.getStatus() + ")";
             DBUtil db = new DBUtil(); //数据库连接，可以直接用
             ResultSet rst = db.getInsertObjectIDs(sql);
             if (rst!=null && rst.first()) {
-                stu.setId(rst.getInt(1));//如果插入成功，就返回数据库里新影厅的编号
+                tic.setId(rst.getInt(1));//如果插入成功，就返回数据库里新影厅的编号
                 return 1;
             }
         } catch (SQLException e) {
@@ -45,7 +43,7 @@ public class TicketDAO implements ITicketDAO {
 
 
     @Override
-    public int update(Ticket stu)  //更新
+    public int update(Ticket tic)  //更新
     {
         /*
     private int id;
@@ -54,12 +52,12 @@ public class TicketDAO implements ITicketDAO {
 	private float price;
 	private int status;
          */
-        String sql = "update ticket set " + " ticket_seatId ='" + stu.getSeatId()
-                + "', " + " ticket_scheduleId= " + stu.getScheduleId() + ", "
-                + " ticket_price = " + stu.getPrice() + ", "
-                + " ticket_status = '" +stu.getStatus() + "' ";
+        String sql = "update ticket set " + " ticket_seatId =" + tic.getSeatId()
+                + ", " + " ticket_scheduleId= " + tic.getScheduleId() + ", "
+                + " ticket_price = " + tic.getPrice() + ", "
+                + " ticket_status = " +tic.getStatus() + " ";
 
-        sql += " where ticket_id = " + stu.getId();
+        sql += " where ticket_id = " + tic.getId();
 
         DBUtil db = new DBUtil();
 
@@ -78,8 +76,8 @@ public class TicketDAO implements ITicketDAO {
     @Override
     public List<Ticket> select(String condt)  //查找
     {
-        List<Ticket> stuList = null;//定义结果集
-        stuList=new LinkedList<Ticket>();
+        List<Ticket> ticList = null;//定义结果集
+        ticList=new LinkedList<Ticket>();
         try {
             String sql = "select ticket_id, ticket_seatId, ticket_scheduleId, ticket_price, ticket_status from ticket ";//查询语句
             condt.trim();//去除前后空格，可以直接用
@@ -92,20 +90,20 @@ public class TicketDAO implements ITicketDAO {
             {
                 while(rst.next())
                 {
-                    Ticket stu=new Ticket();
-                    stu.setId(rst.getInt("ticket_id"));
-                    stu.setSeatId(rst.getInt("ticket_seatId"));
-                    stu.setScheduleId(rst.getInt("ticket_scheduleId"));
-                    stu.setPrice(rst.getFloat("ticket_price"));
-                    stu.setStatus(rst.getInt("ticket_status"));
-                    stuList.add(stu);
+                    Ticket tic=new Ticket();
+                    tic.setId(rst.getInt("ticket_id"));
+                    tic.setSeatId(rst.getInt("ticket_seatId"));
+                    tic.setScheduleId(rst.getInt("ticket_scheduleId"));
+                    tic.setPrice(rst.getFloat("ticket_price"));
+                    tic.setStatus(rst.getInt("ticket_status"));
+                    ticList.add(tic);
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return stuList;
+        return ticList;
     }
 
     public int lockTicket(int ID, String time) {

@@ -25,14 +25,17 @@ public class Play {
 	private String name;
 	private String introduction;
 
-	private int[] image; // ?? 查看一下longblob对应java的类型
+	private byte[] image; // ?? 查看一下longblob对应java的类型
 	private int length;
 	private float ticketPrice;
+	public Play()
+	{
 
+	}
 
 
 	public Play(int id, int typeId, int langId, String name,
-				String introduction, int[] image, int length, float ticketPrice,
+				String introduction, byte[] image, int length, float ticketPrice,
 				int status) {
 		super();
 		this.id = id;
@@ -77,10 +80,10 @@ public class Play {
 	public void setIntroduction(String introduction) {
 		this.introduction = introduction;
 	}
-	public int[] getImage() {
+	public byte[] getImage() {
 		return image;
 	}
-	public void setImage(int[] image) {
+	public void setImage(byte[] image) {
 		this.image = image;
 	}
 	public int getLength() {

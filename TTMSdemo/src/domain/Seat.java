@@ -18,7 +18,10 @@ public class Seat {
 	private int row;
 	private int column;
 
+	public Seat()
+	{
 
+	}
 	public Seat(int id, int studioId, int row, int column) {
 		super();
 		this.id = id;

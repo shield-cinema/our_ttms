@@ -24,7 +24,10 @@ public class Ticket {
 	private float price;
 	private int status;
 
+	public Ticket()
+	{
 
+	}
 	public Ticket(int id, int seatId, int scheduleId, float price, int status) {
 		super();
 		this.id = id;

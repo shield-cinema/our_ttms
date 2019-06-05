@@ -11,12 +11,13 @@ public class DBUtil {
     private final String URL = "jdbc:mysql://localhost/ttms";
     private final String USERNAME = "root";
     private final String PASSWORD = "root";
+    private Connection conn=null;
 
     private Connection createConn() {
-        Connection conn = null;
+        this.conn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver"); //classLoader,加载对应驱动
-            conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            this.conn= DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -84,5 +85,10 @@ public class DBUtil {
             e.printStackTrace();
         }
     }
-
+    public void close() throws SQLException, Exception{
+        if(null!=conn){
+            conn.close();
+            conn=null;
+        }
+    }
 }

@@ -1,12 +1,14 @@
 package dao;
 
+
+import util.DBUtil;
+import domain.Studio;
+import idao.IStudioDAO;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import util.DBUtil;
-import domain.Studio;
-import idao.IStudioDAO;
 
 public class StudioDAO implements IStudioDAO {
 	@Override
@@ -25,9 +27,13 @@ public class StudioDAO implements IStudioDAO {
 			ResultSet rst = db.getInsertObjectIDs(sql);
 			if (rst!=null && rst.first()) {
 				stu.setID(rst.getInt(1));//如果插入成功，就返回数据库里新影厅的编号
+				db.closeDB(rst);
+				db.close();
 				return 1;
 			}
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 

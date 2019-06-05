@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 public class EmployeeDAO implements IEmployeeDAO{
     @Override
-    public int insert(Employee emp)//°ÑÓ°ÌüĞÅÏ¢×ª³Éstring,Á¬½ÓÊı¾İ¿â£¬´«Èë£¬²åÈëÊı¾İ¿âÖµ
+    public int insert(Employee emp)//æŠŠå½±å…ä¿¡æ¯è½¬æˆstring,è¿æ¥æ•°æ®åº“ï¼Œä¼ å…¥ï¼Œæ’å…¥æ•°æ®åº“å€¼
     {
 
         try {
@@ -20,10 +20,10 @@ public class EmployeeDAO implements IEmployeeDAO{
                     + emp.getTelNum() + "', '"
                     + emp.getAddress() + "', '"
                     + emp.getEmail() + "' )";
-            DBUtil db = new DBUtil(); //Êı¾İ¿âÁ¬½Ó£¬¿ÉÒÔÖ±½ÓÓÃ
+            DBUtil db = new DBUtil(); //æ•°æ®åº“è¿æ¥ï¼Œå¯ä»¥ç›´æ¥ç”¨
             ResultSet rst = db.getInsertObjectIDs(sql);
             if (rst!=null && rst.first()) {
-                emp.setId(rst.getInt(1));//Èç¹û²åÈë³É¹¦£¬¾Í·µ»ØÊı¾İ¿âÀïĞÂÓ°ÌüµÄ±àºÅ
+                emp.setId(rst.getInt(1));//å¦‚æœæ’å…¥æˆåŠŸï¼Œå°±è¿”å›æ•°æ®åº“é‡Œæ–°å½±å…çš„ç¼–å·
                 db.closeDB(rst);
                 db.close();
                 return 1;
@@ -37,7 +37,7 @@ public class EmployeeDAO implements IEmployeeDAO{
         return 0;
     }
     @Override
-    public int update(Employee emp)  //¸üĞÂ
+    public int update(Employee emp)  //æ›´æ–°
     {
 
         String sql = "update employee set " +
@@ -51,11 +51,11 @@ public class EmployeeDAO implements IEmployeeDAO{
 
         DBUtil db = new DBUtil();
 
-        return db.execCommand(sql);  //Ö±½ÓÖ´ĞĞ
+        return db.execCommand(sql);  //ç›´æ¥æ‰§è¡Œ
 
     }
     @Override
-    public int delete(int ID)  //¸ù¾İIDÉ¾³ı
+    public int delete(int ID)  //æ ¹æ®IDåˆ é™¤
     {
         String sql = "delete from  employee ";
         sql += " where emp_id = " + ID;
@@ -66,17 +66,17 @@ public class EmployeeDAO implements IEmployeeDAO{
     @Override
     public List<Employee> select(String condt)
     {
-        List<Employee> plaList = null;//¶¨Òå½á¹û¼¯
+        List<Employee> plaList = null;//å®šä¹‰ç»“æœé›†
         plaList=new LinkedList<Employee>();
         try {
-            String sql = "select emp_id, emp_no, emp_name, emp_tel_num, emp_addr, emp_email from employee ";//²éÑ¯Óï¾ä
-            condt.trim();//È¥³ıÇ°ºó¿Õ¸ñ£¬¿ÉÒÔÖ±½ÓÓÃ
-            if(!condt.isEmpty())  //Èç¹û²»ÊÇ¿Õ
-                sql+= " where " + condt;//¼ÓÉÏwhereÓï¾ä
+            String sql = "select emp_id, emp_no, emp_name, emp_tel_num, emp_addr, emp_email from employee ";//æŸ¥è¯¢è¯­å¥
+            condt.trim();//å»é™¤å‰åç©ºæ ¼ï¼Œå¯ä»¥ç›´æ¥ç”¨
+            if(!condt.isEmpty())  //å¦‚æœä¸æ˜¯ç©º
+                sql+= " where " + condt;//åŠ ä¸Šwhereè¯­å¥
             DBUtil db = new DBUtil();
-            ResultSet rst = db.execQuery(sql);  //²éÑ¯²¢µÃµ½½á¹û¼¯
+            ResultSet rst = db.execQuery(sql);  //æŸ¥è¯¢å¹¶å¾—åˆ°ç»“æœé›†
             //System.out.print("sql:"+sql);
-            if (rst!=null)   //ÕÒµ½µÄ½á¹û¼¯ÖØĞÂ´«µ½¶¨ÒåµÄ½á¹û¼¯ÀïÈ¥
+            if (rst!=null)   //æ‰¾åˆ°çš„ç»“æœé›†é‡æ–°ä¼ åˆ°å®šä¹‰çš„ç»“æœé›†é‡Œå»
             {
                 /*
         emp_id               int not null auto_increment,

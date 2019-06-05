@@ -12,7 +12,7 @@ import java.sql.SQLException;
 public class SaleItemDAO implements ISaleItemDAO{
 
     @Override
-    public int insert(SaleItem sal)//°ÑÆ±ĞÅÏ¢×ª³Éstring,Á¬½ÓÊı¾İ¿â£¬´«Èë£¬²åÈëÊı¾İ¿âÖµ
+    public int insert(SaleItem sal)//æŠŠç¥¨ä¿¡æ¯è½¬æˆstring,è¿æ¥æ•°æ®åº“ï¼Œä¼ å…¥ï¼Œæ’å…¥æ•°æ®åº“å€¼
     {
         /*sale_item_id         bigint not null auto_increment,
             ticket_id            bigint,
@@ -27,10 +27,10 @@ public class SaleItemDAO implements ISaleItemDAO{
                     + sal.getSaleId() + ", "
                     + sal.getPrice()
                     + ")";
-            DBUtil db = new DBUtil(); //Êı¾İ¿âÁ¬½Ó£¬¿ÉÒÔÖ±½ÓÓÃ
+            DBUtil db = new DBUtil(); //æ•°æ®åº“è¿æ¥ï¼Œå¯ä»¥ç›´æ¥ç”¨
             ResultSet rst = db.getInsertObjectIDs(sql);
             if (rst!=null && rst.first()) {
-                sal.setId(rst.getInt(1));//Èç¹û²åÈë³É¹¦£¬¾Í·µ»ØÊı¾İ¿âÀïĞÂÓ°ÌüµÄ±àºÅ
+                sal.setId(rst.getInt(1));//å¦‚æœæ’å…¥æˆåŠŸï¼Œå°±è¿”å›æ•°æ®åº“é‡Œæ–°å½±å…çš„ç¼–å·
                 db.closeDB(rst);
                 db.close();
                 return 1;
@@ -43,7 +43,7 @@ public class SaleItemDAO implements ISaleItemDAO{
         return 0;
     }
     @Override
-    public int update(SaleItem sal)  //¸üĞÂ
+    public int update(SaleItem sal)  //æ›´æ–°
     {
          /*sale_item_id         bigint not null auto_increment,
             ticket_id            bigint,
@@ -59,10 +59,10 @@ public class SaleItemDAO implements ISaleItemDAO{
 
         DBUtil db = new DBUtil();
 
-        return db.execCommand(sql);  //Ö±½ÓÖ´ĞĞ
+        return db.execCommand(sql);  //ç›´æ¥æ‰§è¡Œ
     }
     @Override
-    public int delete(int ID)  //¸ù¾İIDÉ¾³ı
+    public int delete(int ID)  //æ ¹æ®IDåˆ é™¤
     {
         String sql = "delete from  sale_item ";
         sql += " where sale_item_id = " + ID;
@@ -79,17 +79,17 @@ public class SaleItemDAO implements ISaleItemDAO{
             sale_item_price      numeric(10,2),
 
          */
-        List<SaleItem> salList = null;//¶¨Òå½á¹û¼¯
+        List<SaleItem> salList = null;//å®šä¹‰ç»“æœé›†
         salList=new LinkedList<SaleItem>();
         try {
-            String sql = "select sale_item_id, ticket_id, sale_ID, sale_item_price, from sale_item ";//²éÑ¯Óï¾ä
-            condt.trim();//È¥³ıÇ°ºó¿Õ¸ñ£¬¿ÉÒÔÖ±½ÓÓÃ
-            if(!condt.isEmpty())  //Èç¹û²»ÊÇ¿Õ
-                sql+= " where " + condt;//¼ÓÉÏwhereÓï¾ä
+            String sql = "select sale_item_id, ticket_id, sale_ID, sale_item_price, from sale_item ";//æŸ¥è¯¢è¯­å¥
+            condt.trim();//å»é™¤å‰åç©ºæ ¼ï¼Œå¯ä»¥ç›´æ¥ç”¨
+            if(!condt.isEmpty())  //å¦‚æœä¸æ˜¯ç©º
+                sql+= " where " + condt;//åŠ ä¸Šwhereè¯­å¥
             DBUtil db = new DBUtil();
-            ResultSet rst = db.execQuery(sql);  //²éÑ¯²¢µÃµ½½á¹û¼¯
+            ResultSet rst = db.execQuery(sql);  //æŸ¥è¯¢å¹¶å¾—åˆ°ç»“æœé›†
             //System.out.print("sql:"+sql);
-            if (rst!=null)   //ÕÒµ½µÄ½á¹û¼¯ÖØĞÂ´«µ½¶¨ÒåµÄ½á¹û¼¯ÀïÈ¥
+            if (rst!=null)   //æ‰¾åˆ°çš„ç»“æœé›†é‡æ–°ä¼ åˆ°å®šä¹‰çš„ç»“æœé›†é‡Œå»
             {
                 while(rst.next())
                 {

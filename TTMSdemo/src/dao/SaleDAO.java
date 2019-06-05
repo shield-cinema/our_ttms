@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 public class SaleDAO implements ISaleDAO {
     @Override
-    public int insert(Sale sa)//°ÑÓ°ÌüĞÅÏ¢×ª³Éstring,Á¬½ÓÊı¾İ¿â£¬´«Èë£¬²åÈëÊı¾İ¿âÖµ
+    public int insert(Sale sa)//æŠŠå½±å…ä¿¡æ¯è½¬æˆstring,è¿æ¥æ•°æ®åº“ï¼Œä¼ å…¥ï¼Œæ’å…¥æ•°æ®åº“å€¼
     {
 
         try {
@@ -24,10 +24,10 @@ public class SaleDAO implements ISaleDAO {
                     + sa.getType()+", "
                     + sa.getStatus()
                     + ")";
-            DBUtil db = new DBUtil(); //Êı¾İ¿âÁ¬½Ó£¬¿ÉÒÔÖ±½ÓÓÃ
+            DBUtil db = new DBUtil(); //æ•°æ®åº“è¿æ¥ï¼Œå¯ä»¥ç›´æ¥ç”¨
             ResultSet rst = db.getInsertObjectIDs(sql);
             if (rst!=null && rst.first()) {
-                sa.setId(rst.getInt(1));//Èç¹û²åÈë³É¹¦£¬¾Í·µ»ØÊı¾İ¿âÀïĞÂÓ°ÌüµÄ±àºÅ
+                sa.setId(rst.getInt(1));//å¦‚æœæ’å…¥æˆåŠŸï¼Œå°±è¿”å›æ•°æ®åº“é‡Œæ–°å½±å…çš„ç¼–å·
                 db.closeDB(rst);
                 db.close();
                 return 1;
@@ -41,7 +41,7 @@ public class SaleDAO implements ISaleDAO {
         return 0;
     }
     @Override
-    public int update(Sale sa)  //¸üĞÂ
+    public int update(Sale sa)  //æ›´æ–°
     {
 
         String sql = "update sale set " +
@@ -56,10 +56,10 @@ public class SaleDAO implements ISaleDAO {
 
         DBUtil db = new DBUtil();
 
-        return db.execCommand(sql);  //Ö±½ÓÖ´ĞĞ
+        return db.execCommand(sql);  //ç›´æ¥æ‰§è¡Œ
     }
     @Override
-    public int delete(int ID)  //¸ù¾İIDÉ¾³ı
+    public int delete(int ID)  //æ ¹æ®IDåˆ é™¤
     {
         String sql = "delete from  sale ";
         sql += " where sale_ID = " + ID;
@@ -75,23 +75,23 @@ public class SaleDAO implements ISaleDAO {
 	   sale_time            datetime,
 	   sale_payment         decimal(10,2),
 	   sale_change          numeric(10,2),
-	   sale_type            smallint comment 'Àà±ğÈ¡Öµº¬Òå£º
-	            1£ºÏúÊÛµ¥
-	            -1£ºÍË¿îµ¥',
-	   sale_status          smallint comment 'ÏúÊÛµ¥×´Ì¬ÈçÏÂ£º
-	            0£º´ú¸¶¿î
-	            1£ºÒÑ¸¶¿î',*/
-        List<Sale> saList = null;//¶¨Òå½á¹û¼¯
+	   sale_type            smallint comment 'ç±»åˆ«å–å€¼å«ä¹‰ï¼š
+	            1ï¼šé”€å”®å•
+	            -1ï¼šé€€æ¬¾å•',
+	   sale_status          smallint comment 'é”€å”®å•çŠ¶æ€å¦‚ä¸‹ï¼š
+	            0ï¼šä»£ä»˜æ¬¾
+	            1ï¼šå·²ä»˜æ¬¾',*/
+        List<Sale> saList = null;//å®šä¹‰ç»“æœé›†
         saList=new LinkedList<Sale>();
         try {
-            String sql = "select sale_ID, emp_id, sale_time, sale_payment, sale_change, sale_type, sale_status from sale ";//²éÑ¯Óï¾ä
-            condt.trim();//È¥³ıÇ°ºó¿Õ¸ñ£¬¿ÉÒÔÖ±½ÓÓÃ
-            if(!condt.isEmpty())  //Èç¹û²»ÊÇ¿Õ
-                sql+= " where " + condt;//¼ÓÉÏwhereÓï¾ä
+            String sql = "select sale_ID, emp_id, sale_time, sale_payment, sale_change, sale_type, sale_status from sale ";//æŸ¥è¯¢è¯­å¥
+            condt.trim();//å»é™¤å‰åç©ºæ ¼ï¼Œå¯ä»¥ç›´æ¥ç”¨
+            if(!condt.isEmpty())  //å¦‚æœä¸æ˜¯ç©º
+                sql+= " where " + condt;//åŠ ä¸Šwhereè¯­å¥
             DBUtil db = new DBUtil();
-            ResultSet rst = db.execQuery(sql);  //²éÑ¯²¢µÃµ½½á¹û¼¯
+            ResultSet rst = db.execQuery(sql);  //æŸ¥è¯¢å¹¶å¾—åˆ°ç»“æœé›†
             //System.out.print("sql:"+sql);
-            if (rst!=null)   //ÕÒµ½µÄ½á¹û¼¯ÖØĞÂ´«µ½¶¨ÒåµÄ½á¹û¼¯ÀïÈ¥
+            if (rst!=null)   //æ‰¾åˆ°çš„ç»“æœé›†é‡æ–°ä¼ åˆ°å®šä¹‰çš„ç»“æœé›†é‡Œå»
             {
                 while(rst.next())
                 {

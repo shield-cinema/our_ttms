@@ -10,7 +10,7 @@ import idao.ISeatDAO;
 
 public class SeatDAO implements  ISeatDAO {
     @Override
-    public int insert(Seat sea)//°Ñ×ùÎ»ĞÅÏ¢×ª³Éstring,Á¬½ÓÊı¾İ¿â£¬´«Èë£¬²åÈëÊı¾İ¿âÖµ
+    public int insert(Seat sea)//æŠŠåº§ä½ä¿¡æ¯è½¬æˆstring,è¿æ¥æ•°æ®åº“ï¼Œä¼ å…¥ï¼Œæ’å…¥æ•°æ®åº“å€¼
     {
      /*   seat_id              int not null auto_increment,
             studio_id            int,
@@ -23,10 +23,10 @@ public class SeatDAO implements  ISeatDAO {
                     + sea.getStudioId() + ", "
                     + sea.getRow() + ", "
                     + sea.getColumn() + ")";
-            DBUtil db = new DBUtil(); //Êı¾İ¿âÁ¬½Ó£¬¿ÉÒÔÖ±½ÓÓÃ
+            DBUtil db = new DBUtil(); //æ•°æ®åº“è¿æ¥ï¼Œå¯ä»¥ç›´æ¥ç”¨
             ResultSet rst = db.getInsertObjectIDs(sql);
             if (rst!=null && rst.first()) {
-                sea.setId(rst.getInt(1));//Èç¹û²åÈë³É¹¦£¬¾Í·µ»ØÊı¾İ¿âÀïĞÂÓ°ÌüµÄ±àºÅ
+                sea.setId(rst.getInt(1));//å¦‚æœæ’å…¥æˆåŠŸï¼Œå°±è¿”å›æ•°æ®åº“é‡Œæ–°å½±å…çš„ç¼–å·
                 db.closeDB(rst);
                 db.close();
                 return 1;
@@ -41,7 +41,7 @@ public class SeatDAO implements  ISeatDAO {
     }
 
     @Override
-    public int update(Seat sea)  //¸üĞÂ
+    public int update(Seat sea)  //æ›´æ–°
     {
 
         String sql = "update seat set " + " studio_id =" + sea.getStudioId()
@@ -52,12 +52,12 @@ public class SeatDAO implements  ISeatDAO {
 
         DBUtil db = new DBUtil();
 
-        return db.execCommand(sql);  //Ö±½ÓÖ´ĞĞ
+        return db.execCommand(sql);  //ç›´æ¥æ‰§è¡Œ
 
     }
 
     @Override
-    public int delete(int ID)  //¸ù¾İIDÉ¾³ı
+    public int delete(int ID)  //æ ¹æ®IDåˆ é™¤
     {
         String sql = "delete from  seat ";
         sql += " where seat_id = " + ID;
@@ -74,17 +74,17 @@ public class SeatDAO implements  ISeatDAO {
         seat_row             int,
         seat_column          int,
       */
-        List<Seat> seaList = null;//¶¨Òå½á¹û¼¯
+        List<Seat> seaList = null;//å®šä¹‰ç»“æœé›†
         seaList=new LinkedList<Seat>();
         try {
-            String sql = "select seat_id, studio_id, seat_row, seat_column from seat ";//²éÑ¯Óï¾ä
-            condt.trim();//È¥³ıÇ°ºó¿Õ¸ñ£¬¿ÉÒÔÖ±½ÓÓÃ
-            if(!condt.isEmpty())  //Èç¹û²»ÊÇ¿Õ
-                sql+= " where " + condt;//¼ÓÉÏwhereÓï¾ä
+            String sql = "select seat_id, studio_id, seat_row, seat_column from seat ";//æŸ¥è¯¢è¯­å¥
+            condt.trim();//å»é™¤å‰åç©ºæ ¼ï¼Œå¯ä»¥ç›´æ¥ç”¨
+            if(!condt.isEmpty())  //å¦‚æœä¸æ˜¯ç©º
+                sql+= " where " + condt;//åŠ ä¸Šwhereè¯­å¥
             DBUtil db = new DBUtil();
-            ResultSet rst = db.execQuery(sql);  //²éÑ¯²¢µÃµ½½á¹û¼¯
+            ResultSet rst = db.execQuery(sql);  //æŸ¥è¯¢å¹¶å¾—åˆ°ç»“æœé›†
             //System.out.print("sql:"+sql);
-            if (rst!=null)   //ÕÒµ½µÄ½á¹û¼¯ÖØĞÂ´«µ½¶¨ÒåµÄ½á¹û¼¯ÀïÈ¥
+            if (rst!=null)   //æ‰¾åˆ°çš„ç»“æœé›†é‡æ–°ä¼ åˆ°å®šä¹‰çš„ç»“æœé›†é‡Œå»
             {
                 while(rst.next())
                 {

@@ -6,6 +6,8 @@
     <file url="file://$PROJECT_DIR$/WebContent/js/bootstrap.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/WebContent/js/jquery-2.1.3.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/WebContent/js/npm.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/dao/EmployeeDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/dao/SaleDAO.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dao/StudioDAO.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dao/TicketDAO.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/domain/DataDict.java" charset="UTF-8" />
@@ -22,7 +24,6 @@
     <file url="file://$PROJECT_DIR$/src/service/TicketSrv.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/util/DBUtil.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/util/DateMatcher.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/util/SaveXIs.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/util/SaveXls.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/view/ImageJPanel.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/view/StudioEditUI.java" charset="UTF-8" />

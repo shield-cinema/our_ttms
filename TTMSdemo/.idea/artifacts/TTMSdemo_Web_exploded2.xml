@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="TTMSdemo:Web exploded2">
+    <output-path>$PROJECT_DIR$/classes/artifacts/TTMSdemo_Web_exploded2</output-path>
+    <root id="root">
+      <element id="artifact" artifact-name="NewModule:war exploded" />
+    </root>
+  </artifact>
+</component>

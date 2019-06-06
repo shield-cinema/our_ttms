@@ -1,58 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/WebContent/META-INF/MANIFEST.MF" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/WebContent/css/bootstrap.css" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/WebContent/js/bootstrap.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/WebContent/js/jquery-2.1.3.min.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/WebContent/js/npm.js" charset="UTF-8" />
-<<<<<<< HEAD
-    <file url="file://$PROJECT_DIR$/src/dao/EmployeeDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/dao/SaleDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/dao/SaleItemDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/dao/SeatDAO.java" charset="UTF-8" />
-=======
-    <file url="file://$PROJECT_DIR$/src/dao/DataDictDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/dao/EmployeeDAO.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/dao/SaleDAO.java" charset="UTF-8" />
->>>>>>> c5903e5b410ce8d5a157fccdb37a083cfa0930a6
-    <file url="file://$PROJECT_DIR$/src/dao/StudioDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/dao/TicketDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/domain/DataDict.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/domain/Employee.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/domain/Play.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/domain/Sale.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/domain/SaleItem.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/domain/Seat.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/domain/Studio.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/domain/Ticket.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/idao/DAOFactory.java" charset="UTF-8" />
-<<<<<<< HEAD
-    <file url="file://$PROJECT_DIR$/src/idao/IEmployeeDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/idao/IPlayDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/idao/ISaleDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/idao/ISaleItemDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/idao/ISeatDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/idao/IStudioDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/idao/ITicketDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/service/EmployeeSrv.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/service/PlaySrv.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/service/SaleItemSrv.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/service/SaleSrv.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/service/SeatSrv.java" charset="UTF-8" />
-=======
-    <file url="file://$PROJECT_DIR$/src/idao/IDataDictDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/idao/IStudioDAO.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/service/DataDictSrv.java" charset="UTF-8" />
->>>>>>> c5903e5b410ce8d5a157fccdb37a083cfa0930a6
-    <file url="file://$PROJECT_DIR$/src/service/StudioSrv.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/service/TicketSrv.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/util/DBUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/util/DateMatcher.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/util/SaveXls.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/view/ImageJPanel.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/view/StudioEditUI.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/view/StudioMgrUI.java" charset="UTF-8" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>

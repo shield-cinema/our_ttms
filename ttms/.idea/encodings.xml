@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/WebContent" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/dao/DataDictDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/dao/EmployeeDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/dao/PlayDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/dao/SaleDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/dao/SaleItemDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/dao/SeatDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/dao/StudioDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/dao/TicketDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/domain/DataDict.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/domain/Employee.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/domain/Play.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/domain/Sale.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/domain/SaleItem.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/domain/Seat.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/domain/Studio.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/domain/Ticket.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/idao/DAOFactory.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/idao/IDataDictDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/idao/IEmployeeDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/idao/IPlayDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/idao/ISaleDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/idao/ISaleItemDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/idao/ISeatDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/idao/IStudioDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/idao/ITicketDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/service/DataDictSrv.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/service/EmployeeSrv.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/service/PlaySrv.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/service/SaleItemSrv.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/service/SaleSrv.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/service/SeatSrv.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/service/StudioSrv.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/service/TicketSrv.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/util/DBUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/util/DateMatcher.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/util/SaveXls.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/view/ImageJPanel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/view/StudioEditUI.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/view/StudioMgrUI.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/view/studio/StudioDelete.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/view/studio/StudioSearch.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/view/studio/StudioUpdate.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/detail.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/fonts" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/images" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/index.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/studio.html" charset="GBK" />
+  </component>
+</project>

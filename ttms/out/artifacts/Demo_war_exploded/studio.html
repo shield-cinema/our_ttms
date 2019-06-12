@@ -77,8 +77,8 @@ body {
 	}
 	
 	function delComplete() {
-		if (req.readyState == 4 && req.status == 200) {
-			if(req.responseText==1)
+		if (req.readyState === 4 && req.status === 200) {
+			if(req.responseText===1)
 				search();
 			else
 				alert("数据删除失败，请重试");
@@ -111,7 +111,7 @@ body {
 						</tr>
 						<tr>
 							<td><img src="images/zuowei.png" width="24px">&nbsp;&nbsp;<a
-								href="javascript:alert('你们自己做!')">座位管理</a></td>
+								href="seat.html">座位管理</a></td>
 						</tr>
 						<tr>
 							<td><img src="images/yingpian.png" width="24px">&nbsp;&nbsp;<a

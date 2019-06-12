@@ -63,7 +63,8 @@
     </style>
 
     <script>
-       function login(){ }
+       function login(){
+       }
     </script>
 
 <title>登录</title>
@@ -71,7 +72,7 @@
 
 <body>
   <div style="position:absolute; width:100%; height:100%; z-index:-1; left:0; top:0;">
-  <img src="images/bg.jpg" style="width:100%; height:100%; position:absolute; top:0; left:0;">  
+  <img src="images/shield.jpg" style="width:100%; height:100%; position:absolute; top:0; left:0;">
   </div>
 
   <form class="form-signin" action="studio.html" method="post">
@@ -79,15 +80,15 @@
   <input type="text" placeholder="账 号"><br>
   <span class="glyphicon glyphicon-lock"></span>
   <input type="password" placeholder="密 码">
-  
+  </form>
   <table width="100%">
   <tr><td align="center">
     <span id="info">账号必须填写</span></td>
   <td align="right"><a href="info.html">忘记密码</a></td>
   </tr></table>
 
-  <button class="btn btn-block btn-default active" type="submit"
-   onsubmit="login()" style="margin-top:15px">登 录</button>
+      <a href = studio.html><button class="btn btn-block btn-default active" type="submit"
+                                    onsubmit="login()" style="margin-top:15px">登 录</button></a>
   </form>
 
   <footer class="footer">西安邮电大学 计算机学院</footer>

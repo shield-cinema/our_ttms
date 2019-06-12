@@ -11,7 +11,7 @@ public class DBUtil {
     private Connection createConn() {
         this.conn = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver"); //classLoader,加载对应驱动
+            Class.forName("com.mysql.cj.jdbc.Driver"); //classLoader,加载对应驱动
             this.conn= DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (Exception e) {
             e.printStackTrace();

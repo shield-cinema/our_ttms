@@ -39,6 +39,8 @@
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/org.hamcrest.core_1.1.0.v20090501071000.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../插件/commons-dbutils-1.7-bin/commons-dbutils-1.7/commons-dbutils-1.7-tests.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../插件/commons-dbutils-1.7-bin/commons-dbutils-1.7/commons-dbutils-1.7.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/jsmartcom_zh_CN.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-8.0.11.jar" />
         </element>
       </element>
     </root>

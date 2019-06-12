@@ -1,38 +1,4 @@
-
 var num=1;
-
-// var lunbo = {
-//     move_left:function () {
-//         console.log(666)
-//         if(num!==3){
-//             $('.all').animate({
-//                 left: '-=1200px',
-//             });
-//             num++;
-//         } else {
-//             $('.all').animate({
-//                 left: '0',
-//             });
-//             num=1;
-//         }
-//     },
-//
-//     move_right:function () {
-//         if(num!==1){
-//             $('.all').animate({
-//                 left: '+=1200px',
-//             });
-//             num--;
-//         } else{
-//             $('.all').animate({
-//                 left: '-2400px',
-//             });
-//             num=3;
-//         }
-//
-//
-//     }
-// };
 
 var lazyLoad = (function(){
 
@@ -90,25 +56,25 @@ function replaceIndexAll(obj) {
     obj.forEach(function (item,index) {
     	if(item.status!=-1){
     		
-        if(index<9){
-            $('.ing .show').append('<div class="show_div" data-playid='+item.num+'>\n' +
-                '                        <img data-img='+item.img+' src="img/blank.jpg">\n' +
-                '                        <div class="buy_ticket"><a >购票</a></div>\n' +
-                '                        <div class="name"><p>'+item.name+'</p></div>\n' +
-                '                    </div>');
-            if(index==0){
-            	 $('.ing .ing_right ol').append('<li style="list-style-type: disc">'+
-                         '<img src="img/no.1.jpg@120w_80h_1e_1c" width="100%">'+
-                         '<p>'+item.name+'</p>'+
-                     '</li>')
-            }else{
-            	$('.ing .ing_right ol').append(' <li data-playid='+item.num+'>'+item.name+'</li>')
-            }
-            
+            if(index<9){
+                $('.ing .show').append('<div class="show_div" data-playid='+item.num+'>\n' +
+                    '                        <img data-img='+item.img+' src="img/beijingtu.png">\n' +
+                    '                        <div class="buy_ticket"><a >购票</a></div>\n' +
+                    '                        <div class="name"><p>'+item.name+'</p></div>\n' +
+                    '                    </div>');
+                if(index==0){
+                     $('.ing .ing_right ol').append('<li style="list-style-type: disc">'+
+                             '<img src="img/no.1.jpg@120w_80h_1e_1c" width="100%">'+
+                             '<p>'+item.name+'</p>'+
+                         '</li>')
+                }else{
+                    $('.ing .ing_right ol').append(' <li data-playid='+item.num+'>'+item.name+'</li>')
+                }
 
-        }else if(index<10){
-            $(' .ing .ing_right ol').append(' <li data-playid='+item.num+'>'+item.name+'</li>')
-        }
+
+            }else if(index<10){
+                $(' .ing .ing_right ol').append(' <li data-playid='+item.num+'>'+item.name+'</li>')
+            }
     	}
     })
 
@@ -126,89 +92,6 @@ function loading(){
             success:function (data) {
                 //展示数据
                 obj=JSON.parse(data);
-//                obj=[
-//                    {
-//                        num:'1',
-//                        name:'复仇者联盟3',
-//                        img:"img/fczlm3.png",
-//                        director:'xxx',
-//                        language:'xxx',
-//                        type:'xxx',
-//                        time:'xxx',
-//                        status:'xxx',
-//                        list:[
-//                            {
-//                                id:'a1',
-//
-//                                room:'xxx',
-//                                ticket:'xxx',
-//                                start:'xxx'
-//                            },{
-//                                id:'a2',
-//
-//                                room:'xxx',
-//                                ticket:'xxx',
-//                                start:'xxx'
-//                            }
-//                        ]
-//                    },
-//                    {
-//                        num:'2',
-//                        name:'复仇者联盟2',
-//                        img:"img/fczlm3.png",
-//                        director:'xxx',
-//                        language:'xxx',
-//                        type:'xxx',
-//                        time:'xxx',
-//                        status:'xxx',
-//                        list:[
-//                            {
-//                                id:'a3',
-//                                name:'xxx3',
-//                                time:'xxx',
-//                                room:'xxx',
-//                                ticket:'xxx',
-//                                start:'xxx'
-//                            },{
-//                                id:'a4',
-//                                name:'xxx4',
-//                                time:'xxx',
-//                                room:'xxx',
-//                                ticket:'xxx',
-//                                start:'xxx'
-//                            }
-//                        ]
-//                    }
-//                ];
-//                for(i=0;i<30;i++){
-//                    obj.push({
-//                        num:'1',
-//                        name:'xxx',
-//                        img:"img/fczlm3.png",
-//                        director:'xxx',
-//                        language:'xxx',
-//                        type:'xxx',
-//                        time:'xxx',
-//                        status:'xxx',
-//                        list:[
-//                            {
-//                                id:'a1',
-//                                name:'xxx1',
-//                                time:'xxx',
-//                                room:'xxx',
-//                                ticket:'xxx',
-//                                start:'xxx'
-//                            },{
-//                                id:'a2',
-//                                name:'xxx2',
-//                                time:'xxx',
-//                                room:'xxx',
-//                                ticket:'xxx',
-//                                start:'xxx'
-//                            }
-//                        ]
-//                    })
-//                }
                 console.log(obj)
                 replaceIndexAll(obj.obj);
             }
@@ -354,19 +237,4 @@ function findmovie(val){
         }
 
     })
-
-
-
-    //
-    // $('body').on('click','.username',function () {
-    //     let username = $(this).text();
-    //     $.cookie('username',username,{ expires: 7 ,path: '/'});
-    //     window.location.href='user.html'
-    // })
-    //
-    // $('body').on('click','.out',function () {
-    //     $.cookie('username',' ',{expires: -1,path: '/'});
-    //     window.location.replace('index.html')
-    // })
-
  })

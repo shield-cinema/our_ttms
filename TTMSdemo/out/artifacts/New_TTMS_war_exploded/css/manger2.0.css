@@ -1,5 +1,7 @@
 body{
     /*background-image: url("../img/bg1_3.jpg");*/
+    background-image: url("../img5/4.jpeg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;

@@ -42,15 +42,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="jsp-api" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../jsmartcom_zh_CN/jsmartcom_zh_CN.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="jsmartcom_zh_CN" level="project" />
     <orderEntry type="module-library">
       <library>

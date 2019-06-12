@@ -1,14 +1,17 @@
 body{
-    background-image: url('../img/login.jpg');
+    background-image: url('../img5/17.jpg');
+    background-size: cover;
 }
 
 .dark-matter {
     position: relative;
-    margin-top: 50px;
-    margin-left: auto;
+    margin-top: 150px;
+    margin-left: 800px;
     margin-right: auto;
     max-width: 500px;
-    background: #555;
+    /*background: #555;*/
+    background-image: url("../img5/16.jpg");
+    background-size: cover;
     padding: 20px 30px 20px 30px;
     font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #D3D3D3 ;

@@ -2,7 +2,7 @@
 function replaceIt(obj) {
     $('.movie_font h1').text(obj.name);
     $('.movie_font').prev().attr('src',obj.img);
-    $('title').text('咸鱼影业——'+obj.name);
+    $('title').text('SHIELD'+obj.name);
 
     $('.movie_font  p:nth-of-type(1)').text(obj.name);
     $('.movie_font  p:nth-of-type(2)').text(obj.director);
@@ -109,48 +109,6 @@ function loading(){
         async: true,
         success: function (data) {
             obj = JSON.parse(data);
-            /*obj={
-                    num:'1',
-                    name:'复仇者联盟3',
-                    img:"img/fczlm3.png",
-                    director:'xxx',
-                    language:'xxx',
-                    type:'xxx',
-                    data:'xxx',
-                    list:[
-                        {
-                            id:'a1',
-                            room:'A1',
-                            ticket:'xxx',
-                            start:'2018-06-11T09:20'
-                        },{
-                            id:'a2',
-                            room:'A2',
-                            ticket:'xxx',
-                            start:'2018-06-11T09:20'
-                        },{
-                            id:'a3',
-                            room:'A2',
-                            ticket:'xxx',
-                            start:'2018-06-12T09:20'
-                        },{
-                            id:'a4',
-                            room:'A2',
-                            ticket:'xxx',
-                            start:'2018-06-10T09:20'
-                        },{
-                            id:'a5',
-                            room:'A2',
-                            ticket:'xxx',
-                            start:'2018-06-10T09:20'
-                        },{
-                            id:'a6',
-                            room:'A2',
-                            ticket:'xxx',
-                            start:'2018-06-10T09:20'
-                        }
-                    ]
-                }*/
 
             replaceIt(obj)
         }

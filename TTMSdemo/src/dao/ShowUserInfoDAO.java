@@ -41,7 +41,8 @@ public class ShowUserInfoDAO{
 		String sql1,sql2;
 		String str = null;
 		int index;
-		StringBuilder sb = new StringBuilder();
+		StringBuilder sb = null;
+		sb = new StringBuilder();
 		sb.append("{");
 		if(bytes!=null){
 			sb.append("\"img\":\"http://localhost:8080/" +

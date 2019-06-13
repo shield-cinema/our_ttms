@@ -299,7 +299,7 @@ var replaceobj = {
                 '                        <th>'+item.col+'<img class="change_room col" src="img/xiugai.png"></th>\n' +
                 '                        <th>'+item.val+'</th>\n' +
                 '                        <th class="remove_room">删除</th>\n' +
-                '                        <th class="design_room">设计</th>\n' +
+                // '                        <th class="design_room">设计</th>\n' +
                 '                    </tr>')
         })
     }
@@ -396,58 +396,6 @@ var AjaxValue = {
             success:function (data) {
                 //展示数据
                 obj=JSON.parse(data);
-               /* obj=[
-                    {
-                        num:'1',
-                        name:'xxx',
-                        img:"img/fczlm3.png",
-                        director:'xxx',
-                        language:'xxx',
-                        type:'xxx',
-                        time:'xxx',
-                        status:'xxx',
-                        list:[
-                            {
-                                id:'a1',
-                                room:'xxx',
-                                ticket:'xxx',
-                                start:'xxx'
-                            },{
-                                id:'a2',
-                                room:'xxx',
-                                ticket:'xxx',
-                                start:'xxx'
-                            }
-                        ]
-                    },
-                    {
-                        num:'2',
-                        name:'xxx',
-                        img:"img/fczlm3.png",
-                        director:'xxx',
-                        language:'xxx',
-                        type:'xxx',
-                        time:'xxx',
-                        status:'xxx',
-                        list:[
-                            {
-                                id:'a3',
-                                name:'xxx3',
-                                time:'xxx',
-                                room:'xxx',
-                                ticket:'xxx',
-                                start:'xxx'
-                            },{
-                                id:'a4',
-                                name:'xxx4',
-                                time:'xxx',
-                                room:'xxx',
-                                ticket:'xxx',
-                                start:'xxx'
-                            }
-                        ]
-                    }
-                ]*/
 
                 replaceobj.replace_all(obj.obj);
             }
@@ -629,25 +577,7 @@ var AjaxValue = {
             success:function (data) {
                 //展示数据
                 data=JSON.parse(data);
-                /*data=[
-                    {
-                        identity:'xxx',
-                        id:'3',
-                        name:'xxxxx',
-                        tel:'18392120131',
-                        email:'123@qq.com',
-                        address:'xxxxxxx'
-                    },
-                    {
-                        identity:'xxx',
-                        id:'4',
-                        name:'xxxxx',
-                        tel:'18392120131',
-                        email:'123@qq.com',
-                        address:'xxxxxxx'
-                    }
 
-                ]*/
                 replaceobj.replacePeopleAll(data);
             }
         })
@@ -666,17 +596,7 @@ var AjaxValue = {
             success:function (data) {
                 //展示数据
                 data = JSON.parse(data);
-                /*data=[
-                    {
-                        name:'xxxxx',
-                        money:'xxx'
-                    },
-                    {
-                        name:'xxxxx',
-                        money:'xxx'
-                    }
 
-                ]*/
                 replaceobj.replaceMoney(data);
 
             }
@@ -776,24 +696,7 @@ var AjaxValue = {
             success:function (data) {
                 //展示数据
                 data = JSON.parse(data);
-                /*data=[
-                    {
-                        id:'3',
-                        name:'xxx',
-                        row:'10',
-                        col:'5',
-                        val:'xxxx'
-                    },
-                    {
 
-                        id:'4',
-                        name:'xxx',
-                        row:'10',
-                        col:'5',
-                        val:'xxxx'
-                    }
-
-                ]*/
                 replaceobj.replaceRoomAll(data);
 
             }

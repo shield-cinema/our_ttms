@@ -99,10 +99,10 @@ window.onload=function () {
 
     form.elements['username'].onchange=function () {
         if(!check.check_username(this.value)){
-            change('no','用户名不合服规范','check1');
+            change('no','用户名不符合规范','check1');
             flag[1]=0;
         }else {
-            change('yes','用户名不合服规范','check1');
+            change('yes','用户名不符合规范','check1');
             flag[1]=1;
         }
 

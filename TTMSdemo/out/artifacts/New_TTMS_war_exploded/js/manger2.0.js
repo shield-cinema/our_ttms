@@ -272,7 +272,7 @@ var replaceobj = {
             '                        <th>'+obj.col+'<img class="change_room col" src="img/xiugai.png"></th>\n' +
             '                        <th>'+obj.val+'</th>\n' +
             '                        <th class="remove_room">删除</th>\n' +
-            '                        <th class="design_room">设计</th>\n' +
+            // '                        <th class="design_room">设计</th>\n' +
             '                    </tr>'));
     },
     replaceRoomChange:function (obj) {
